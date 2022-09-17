@@ -12,7 +12,20 @@ import hotel9 from './hotels/gal-9.jpg';
 import hotel10 from './hotels/gal-10.jpg';
 
 import { FaMapMarkerAlt, FaMoneyCheckAlt } from 'react-icons/fa';
+import { useEffect } from 'react';
 const Hotels = () => {
+  const fetchHotels = async () => {
+    try {
+      const res = await fetch('https://portfoliorecovery.me/wp-json/wp/v2/posts');
+      const data = await res.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    fetchHotels();
+  }, []);
   return (
     <div className={styles.hotels}>
       <div className={styles.hotel}>
@@ -22,7 +35,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -34,7 +47,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -46,7 +59,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -58,7 +71,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -70,7 +83,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -82,7 +95,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -94,7 +107,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -106,7 +119,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -118,7 +131,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
@@ -130,7 +143,7 @@ const Hotels = () => {
           <FaMapMarkerAlt className={styles['location-icon']} />
           <p className={styles['hotel-info']}>USA</p>
         </div>
-        <div class={styles['hotel-price']}>
+        <div className={styles['hotel-price']}>
           <FaMoneyCheckAlt className={styles['price-icon']} />
           <p className={styles['hotel-info']}>250$</p>
         </div>
