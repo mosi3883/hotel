@@ -5,13 +5,13 @@ import ReservationForm from '../Components/ReservationForm';
 
 const ReservationPage = () => {
   return (
-    <div>
+    <>
       <div className='container'>
         <Navbar page='book-now' />
         <ReservationForm />
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

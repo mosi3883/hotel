@@ -4,13 +4,13 @@ import Footer from '../Components/Footer';
 import Hotels from '../Components/Hotels';
 const HotelsPage = () => {
   return (
-    <div>
+    <>
       <div className='container'>
         <Navbar page='hotels' />
         <Hotels />
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

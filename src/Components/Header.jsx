@@ -7,7 +7,6 @@ const Header = () => {
   return (
     <header>
       <div className='container'>
-        <Navbar page='home' />
         <div className='hero'>
           <div className='hero-text'>
             <h2 className='hero-text-heading'>Easily find where to stay in brgen!</h2>

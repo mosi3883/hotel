@@ -10,13 +10,13 @@ const HotelPage = () => {
   const { id } = useParams();
 
   return (
-    <div>
+    <>
       <div className='container'>
         <Navbar />
         <Hotel id={id} />
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
