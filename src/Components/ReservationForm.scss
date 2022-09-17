@@ -1,0 +1,59 @@
+.reservation-form {
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+.reserve-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.reserve-input {
+  width: 100%;
+  border: 1px solid rgba($color: #f05f62, $alpha: 0.4);
+  transition: all 0.25s;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+    border: 1px solid rgba($color: #f05f62, $alpha: 0.8);
+  }
+
+  &__small {
+    width: 80% !important;
+  }
+}
+
+.reserve-form-content {
+  border: 1px solid var(--color-three);
+  min-height: 600px;
+  border-radius: 30px;
+  padding: 70px 35px;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.input-guests {
+  grid-column: 1 / span 2;
+}
+
+.check-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.check-input {
+  width: 90%;
+  border: 1px solid rgba($color: #f05f62, $alpha: 0.4);
+  transition: all 0.25s;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+}

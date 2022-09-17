@@ -1,0 +1,12 @@
+.hotel-hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hotel-intro-box {
+  padding: 25px;
+}
+
+.hotel-description {
+  margin: 30px 0;
+}

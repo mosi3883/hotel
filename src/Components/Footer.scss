@@ -1,0 +1,98 @@
+.footer {
+  background-color: var(--color-one);
+  color: #fff;
+  margin-top: 50px;
+  padding: 50px 0;
+
+  h4 {
+    margin-bottom: 35px;
+  }
+}
+
+.addresses {
+  display: grid;
+  margin-bottom: 70px;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  gap: 50px 30px;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.address-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 15px;
+  color: var(--color-four);
+}
+
+.socials {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+
+  a:link,
+  a:visited {
+    color: #fff;
+  }
+
+  svg {
+  }
+}
+
+.email-sub-box {
+  margin-top: 0;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: 1000px) {
+    flex-direction: row;
+  }
+}
+
+.email-sub-text {
+  width: 50%;
+}
+
+.email-sub-form {
+  flex-grow: 1;
+}
+
+.email-sub-form > form {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.email-sub-input {
+  width: 80%;
+  padding: 7px 10px;
+  border-radius: 3px;
+  border: none;
+  border: 2px solid transparent;
+  transition: all 0.25s;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-two);
+  }
+}
+
+.email-sub-btn {
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-three);
+  display: inline-block;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 2px;
+}

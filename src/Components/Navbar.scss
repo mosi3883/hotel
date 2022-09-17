@@ -1,0 +1,140 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list {
+    align-items: center;
+    list-style: none;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 30px;
+    display: none;
+    @media screen and (min-width: 1000px) {
+      flex-direction: row;
+      margin-top: 0;
+      display: flex;
+      gap: 15px;
+    }
+  }
+
+  &__item {
+    margin: 0 10px;
+  }
+
+  &__link {
+    position: relative;
+
+    &:link,
+    &:visited {
+      color: #fff;
+      @media screen and (min-width: 1000px) {
+        color: var(--color-one);
+      }
+
+      padding: 10px 10px;
+      text-decoration: none;
+      font-size: 22px;
+      transition: all 0.2s;
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover,
+    &:active {
+      border-bottom: 1px solid var(--color-three);
+    }
+  }
+
+  &__auth-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__auth-link {
+    &:link,
+    &:visited {
+      color: var(--color-one);
+      padding: 10px;
+      text-decoration: none;
+      font-size: 22px;
+      transition: all 0.2s;
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover,
+    &:active {
+      border-bottom: 1px solid var(--color-three);
+    }
+  }
+}
+
+.logo {
+  height: 100px;
+}
+
+.nav-active:link,
+.nav-active:visited {
+  border-bottom: 1px solid var(--color-three) !important;
+}
+
+// search
+
+.search-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 15px;
+  transition: all 0.25s;
+
+  &:hover {
+    color: var(--color-three);
+  }
+}
+
+.ham-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.25s;
+  &:hover {
+    color: var(--color-three);
+  }
+  @media screen and (min-width: 1000px) {
+    display: none;
+  }
+}
+
+.search-form {
+  padding: 50px;
+}
+
+.search-input {
+  border: none;
+  padding: 15px 30px;
+  font-size: 32px;
+  font-family: inherit;
+  background-color: transparent;
+  display: block;
+  color: #eee;
+  border-bottom: 1px solid transparent;
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.search-submit-btn {
+  display: block;
+  margin: 30px auto;
+  font-size: 20px;
+  background-color: #ddd;
+  color: #222;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  padding: 15px;
+}
