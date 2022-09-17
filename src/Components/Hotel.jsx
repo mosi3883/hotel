@@ -1,7 +1,9 @@
 import React from 'react';
 import homeImg1 from './hotels/gal-10.jpg';
 import './Hotel.scss';
-const Hotel = () => {
+
+const Hotel = ({ id }) => {
+  console.log(id);
   return (
     <div className='home'>
       <h1 className='heading-primary'>hotel name</h1>
@@ -10,7 +12,7 @@ const Hotel = () => {
           <img src={homeImg1} alt='hotel' className='hotel-img' />
         </div>
         <div className='hotel-intro-box'>
-          <h3 className='heaing-secondary'>hotel name</h3>
+          <h4 className='heading-4'>hotel name</h4>
           <p className='hotel-price-box'>
             <b>price: </b> 850$
           </p>
@@ -37,7 +39,7 @@ const Hotel = () => {
           facere reprehenderit. Iusto veritatis soluta cupiditate. Accusantium, vero!
         </p>
         <div className='text-center '>
-          <button>Book now</button>
+          <button className='main-btn'>Book now</button>
         </div>
       </div>
     </div>

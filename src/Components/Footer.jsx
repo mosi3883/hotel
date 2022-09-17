@@ -31,7 +31,7 @@ const Footer = () => {
             <div className='address-location'>
               <HiOutlineLocationMarker className='address-icon' />
               <h5 className='heading-5 text-center'>our agency</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, id!</p>
+              <p>Lorem ipsum dolor sit amet consectetur </p>
             </div>
             <div className='address-socials'>
               <TbSocial className='address-icon' />
@@ -55,9 +55,11 @@ const Footer = () => {
         </div>
         <div className='email-sub-box'>
           <div className='email-sub-text'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, ea. Et, quod,
-            fugiat ut eos neque veritatis eius in, saepe facilis debitis ullam eligendi rem
-            porro unde soluta! Odio, sit.
+            <h5 className='heading-5'>follow our team of exports live from our destination</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, ea. Et,
+              quod, fugiat ut eos neque verita
+            </p>
           </div>
           <div className='email-sub-form'>
             <form>

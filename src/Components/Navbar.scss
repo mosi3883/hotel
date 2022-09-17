@@ -27,7 +27,7 @@
 
     &:link,
     &:visited {
-      color: #fff;
+      color: var(--color-five);
       @media screen and (min-width: 1000px) {
         color: var(--color-one);
       }
@@ -120,6 +120,7 @@
   background-color: transparent;
   display: block;
   color: #eee;
+  width: 100%;
   border-bottom: 1px solid transparent;
   &:focus {
     outline: none;
@@ -137,4 +138,37 @@
   cursor: pointer;
   width: 50%;
   padding: 15px;
+}
+
+.autocomplete {
+  position: relative;
+  margin-top: 25px;
+}
+
+.autocomplete-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  margin-top: 0;
+  width: 100%;
+  left: 0;
+}
+
+a.autocomplete-link {
+  &:link,
+  &:visited {
+    color: var(--color-five);
+    text-decoration: none;
+    display: block;
+    background-color: var(--color-five);
+    color: #222;
+    padding: 10px 20px;
+    opacity: 0.8;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
 }

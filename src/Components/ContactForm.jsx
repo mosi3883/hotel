@@ -37,7 +37,7 @@ const ContactForm = () => {
         </div>
       </div>
       <div className='text-center'>
-        <button className='contact-submit-btn'>Send</button>
+        <button className='main-btn'>Send</button>
       </div>
     </form>
   );

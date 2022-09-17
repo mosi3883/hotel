@@ -1,5 +1,5 @@
 .reservation-form {
-  max-width: 600px;
+  max-width: 650px;
   margin: 100px auto;
 }
 
@@ -23,7 +23,9 @@
   }
 
   &__small {
-    width: 80% !important;
+    @media screen and (min-width: 600px) {
+      width: 80% !important;
+    }
   }
 }
 
@@ -36,11 +38,18 @@
 
 .input-group {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+  @media screen and (min-width: 600px) {
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .input-guests {
-  grid-column: 1 / span 2;
+  @media screen and (min-width: 600px) {
+    grid-column: 1 / span 2;
+  }
 }
 
 .check-label {
@@ -49,7 +58,11 @@
 }
 
 .check-input {
-  width: 90%;
+  width: 100%;
+  @media screen and (min-width: 600px) {
+    // width: 90%;
+  }
+
   border: 1px solid rgba($color: #f05f62, $alpha: 0.4);
   transition: all 0.25s;
   padding: 5px 10px;

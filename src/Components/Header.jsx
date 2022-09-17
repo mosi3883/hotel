@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.scss';
 import Navbar from './Navbar';
 import heroImg from './hero.jpg';
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header>
@@ -13,10 +14,13 @@ const Header = () => {
             <p className='hero-text-paragraph'>
               There are many types of hotel, big and small. Big hotels, which are part of a
               'group', offer guests a standard that does not vary from one location to another.
-              Hotels can be awarded 'Stars' if their facilities match the Tourist Boards
-              specifications. The more stars, the higher the standards. There is also a 'Red
-              Star' accolade awarded for excellent cuisine.
+              Hotels can be awarded 'Stars' if their facilities match.
             </p>
+            <div>
+              <Link to='/reserve-now' className='main-btn'>
+                Book now
+              </Link>
+            </div>
           </div>
           <div className='hero-img-box'>
             <img src={heroImg} alt='hero' className='hero-img' />

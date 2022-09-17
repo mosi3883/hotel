@@ -1,11 +1,11 @@
 .footer {
   background-color: var(--color-one);
-  color: #fff;
+  color: var(--color-five);
   margin-top: 50px;
   padding: 50px 0;
 
-  h4 {
-    margin-bottom: 35px;
+  h5 {
+    margin-bottom: 18px;
   }
 }
 
@@ -30,7 +30,7 @@
 .address-icon {
   width: 30px;
   height: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: var(--color-four);
 }
 
@@ -41,7 +41,7 @@
 
   a:link,
   a:visited {
-    color: #fff;
+    color: var(--color-five);
   }
 
   svg {
@@ -51,7 +51,7 @@
 .email-sub-box {
   margin-top: 0;
   display: flex;
-  gap: 40px;
+  gap: 55px;
   align-items: center;
   flex-direction: column;
   @media screen and (min-width: 1000px) {
@@ -80,6 +80,7 @@
   border: none;
   border: 2px solid transparent;
   transition: all 0.25s;
+  background-color: var(--color-five);
 
   &:focus {
     outline: none;
@@ -93,6 +94,6 @@
   background-color: var(--color-three);
   display: inline-block;
   padding: 5px 10px;
-  color: #fff;
+  color: var(--color-five);
   border-radius: 2px;
 }

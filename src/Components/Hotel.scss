@@ -1,12 +1,28 @@
 .hotel-hero {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, fr);
+
+  @media screen and (min-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .hotel-intro-box {
   padding: 25px;
 }
 
+.hotel-price-box {
+  margin-bottom: 10px;
+}
+
 .hotel-description {
   margin: 30px 0;
+
+  & > p {
+    margin-bottom: 10px;
+  }
+
+  & > p:last-of-type {
+    margin-bottom: 35px;
+  }
 }

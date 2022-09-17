@@ -38,7 +38,7 @@
   text-align: center;
   padding: 12.5px;
   background-color: #101d2c;
-  color: #fff;
+  color: var(--color-five);
   font-weight: 400;
   transform: translateY(50%);
 }

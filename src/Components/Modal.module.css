@@ -9,7 +9,6 @@
 }
 
 .modal {
-  /* background-color: #fff; */
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0.8;
   position: fixed;

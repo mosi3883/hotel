@@ -51,6 +51,11 @@ const ReservationForm = () => {
             </div>
           </div>
         </div>
+        <div className='form-group text-center'>
+          <button type='submit' className='main-btn'>
+            Send
+          </button>
+        </div>
       </div>
     </form>
   );

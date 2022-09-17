@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import logo from './logo2.png';
@@ -9,6 +9,7 @@ import MainNavList from './MainNavList';
 const Navbar = ({ page }) => {
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
+
   const openSearchModal = () => {
     setShowSearchModal(true);
   };
@@ -24,6 +25,10 @@ const Navbar = ({ page }) => {
   const openNavbar = () => {
     setShowNavbar(true);
   };
+
+  // useEffect(() => {
+  //   return () => setShowSearchModal(false);
+  // });
 
   return (
     <nav className='main-nav'>
@@ -58,7 +63,18 @@ const Navbar = ({ page }) => {
       {showSearchModal && (
         <Modal closeModal={closeSearchModal}>
           <form className='search-form' onSubmit={handleSearchSubmit}>
-            <input type='text' className='search-input' placeholder='Search ...' autoFocus />
+            <div className='autocomplete'>
+              <input type='text' className='search-input' placeholder='Search ...' autoFocus />
+              <div className='autocomplete-items'>
+                <Link to='/hotel/25' className='autocomplete-link'>
+                  hotel 25
+                </Link>
+                <Link to='/hotel/32' className='autocomplete-link'>
+                  hotel 32
+                </Link>
+              </div>
+            </div>
+
             <button type='submit' className='search-submit-btn'>
               Search
             </button>

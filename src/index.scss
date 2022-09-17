@@ -15,7 +15,7 @@
   --color-two: #458fcd;
   --color-three: #f05f62;
   --color-four: #f9c0bc;
-  --color-five: #ffffff;
+  --color-five: #fefcfc;
   --font-text: 'Quicksand', sans-serif;
   --font-heading: 'League Spartan', sans-serif;
 }
@@ -76,4 +76,34 @@ h6 {
 .form-group {
   margin-bottom: 20px;
   position: relative;
+}
+
+.d-block {
+  display: block !important;
+  width: 100%;
+}
+
+.main-btn {
+  &,
+  &:link,
+  &:visited {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color-five);
+    background-color: var(--color-two);
+    padding: 10px 20px;
+    border-radius: 100px;
+    display: inline-block;
+    margin-top: 15px;
+    text-transform: uppercase;
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
+    border: 1px solid transparent;
+  }
+
+  &:hover,
+  &:active {
+    color: var(--color-two);
+    background-color: var(--color-five);
+    border: 1px solid var(--color-two);
+  }
 }
