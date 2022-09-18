@@ -23,7 +23,7 @@
   }
 
   &__small {
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 768px) {
       width: 80% !important;
     }
   }
@@ -31,7 +31,7 @@
 
 .reserve-form-content {
   border: 1px solid var(--color-three);
-  min-height: 600px;
+  min-height: 768px;
   border-radius: 30px;
   padding: 70px 35px;
 }
@@ -40,14 +40,14 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 15px;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     gap: 15px;
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .input-guests {
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     grid-column: 1 / span 2;
   }
 }
@@ -59,7 +59,7 @@
 
 .check-input {
   width: 100%;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     // width: 90%;
   }
 
