@@ -35,6 +35,13 @@ const Login = () => {
       });
       return;
     }
+    Swal.fire({
+      text: 'we are checking your username and password',
+      position: 'top-end',
+      timerProgressBar: true,
+      timer: 3000,
+      showConfirmButton: false,
+    });
     authCtx.login(username, password);
   };
   const userChangeHandler = (e) => {

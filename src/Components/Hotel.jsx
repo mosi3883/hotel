@@ -1,24 +1,48 @@
-import homeImg1 from './hotels/gal-10.jpg';
 import './Hotel.scss';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import ReactLoading from 'react-loading';
+import { useCallback } from 'react';
 
 const Hotel = ({ id }) => {
+  const navigate = useNavigate();
   const [html, setHtml] = useState('');
-  const p = '<p>sadasdda</p>';
-  console.log(html.c);
-  console.log(id);
-  const fetchHotel = async () => {
+  const [loading, setLoading] = useState(true);
+
+  if (!id || !Number.isFinite(+id)) {
+    navigate('/hotels');
+  }
+
+  const fetchHotel = useCallback(async () => {
     try {
-      const res = await fetch('https://portfoliorecovery.me/wp-json/wp/v2/posts');
+      const res = await fetch('https://portfoliorecovery.me/wp-json/wp/v2/posts/' + id);
       const data = await res.json();
-      setHtml(data[id - 1].content.rendered);
-    } catch (err) {}
-  };
+      console.log(data);
+      setHtml(data.content.rendered);
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [id]);
   useEffect(() => {
     fetchHotel();
-  }, []);
-  return <div dangerouslySetInnerHTML={{ __html: html }}></div>;
+  }, [fetchHotel]);
+  if (loading) {
+    return <ReactLoading className='loading' type='bars' />;
+  }
+  return (
+    <>
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>;
+      <div class='text-center '>
+        <Link to={`/reserve-now?id=${id}`} class='main-btn'>
+          Book now
+        </Link>
+      </div>
+    </>
+  );
+
   // return (
   //   <div className='home'>
   //     <h1 className='heading-primary'>hotel name</h1>

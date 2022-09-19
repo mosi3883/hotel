@@ -1,0 +1,35 @@
+.addHotel-form {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px 50px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.2);
+  border-radius: 7px;
+}
+
+.addHotel-label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.addHotel-input,
+.addHotel-textarea {
+  display: block;
+  width: 100%;
+  padding: 7px 15px;
+  border: 1px solid rgba($color: #000000, $alpha: 0.5);
+  transition: all 0.2s;
+  border-radius: 4px;
+  font-size: 17px;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #111;
+  }
+}
+
+.addHotel-textarea {
+  height: 130px;
+}
