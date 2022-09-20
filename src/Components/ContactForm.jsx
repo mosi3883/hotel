@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import postImg from './post_mail_mailbox.png';
+import mailImg from './mailbox.png';
 import './ContactForm.scss';
 import Swal from 'sweetalert2';
 const ContactForm = () => {
@@ -50,67 +50,69 @@ const ContactForm = () => {
     }
   };
   return (
-    <form className='contact-form' onSubmit={contactSubmitHandler}>
-      <h2 className='text-center heading-secondary'>Contact us</h2>
-      <div className='contact-inner'>
-        <div className='left-side'>
-          <div className='form-group'>
-            <label htmlFor='firstName' className='contact-label'>
-              First name:
-            </label>
-            <input
-              type='text'
-              className='contact-input'
-              onChange={fnameChangeHandler}
-              value={fname}
-            />
+    <div className='container'>
+      <form className='contact-form' onSubmit={contactSubmitHandler}>
+        <h2 className='text-center heading-secondary'>Contact us</h2>
+        <div className='contact-inner'>
+          <div className='left-side'>
+            <div className='form-group'>
+              <label htmlFor='firstName' className='contact-label'>
+                First name:
+              </label>
+              <input
+                type='text'
+                className='contact-input'
+                onChange={fnameChangeHandler}
+                value={fname}
+              />
+            </div>
+            <div className='form-group'>
+              <label htmlFor='lastName' className='contact-label'>
+                Last name:
+              </label>
+              <input
+                type='text'
+                className='contact-input'
+                onChange={lnameChangeHandler}
+                value={lname}
+              />
+            </div>
+            <div className='form-group'>
+              <label htmlFor='email' className='contact-label'>
+                Email address:
+              </label>
+              <input
+                type='email'
+                className='contact-input'
+                id='email'
+                onChange={emailChangeHandler}
+                value={email}
+              />
+            </div>
+            <div className='form-group'>
+              <label htmlFor='firstName' className='contact-label'>
+                Message:
+              </label>
+              <textarea
+                id='message'
+                className='contact-textarea'
+                onChange={messageChangeHanlder}
+              >
+                {message}
+              </textarea>
+            </div>
           </div>
-          <div className='form-group'>
-            <label htmlFor='lastName' className='contact-label'>
-              Last name:
-            </label>
-            <input
-              type='text'
-              className='contact-input'
-              onChange={lnameChangeHandler}
-              value={lname}
-            />
-          </div>
-          <div className='form-group'>
-            <label htmlFor='email' className='contact-label'>
-              Email address:
-            </label>
-            <input
-              type='email'
-              className='contact-input'
-              id='email'
-              onChange={emailChangeHandler}
-              value={email}
-            />
-          </div>
-          <div className='form-group'>
-            <label htmlFor='firstName' className='contact-label'>
-              Message:
-            </label>
-            <textarea
-              id='message'
-              className='contact-textarea'
-              onChange={messageChangeHanlder}
-            >
-              {message}
-            </textarea>
+          <div className='right-side'>
+            <img src={mailImg} alt='contact' className='post-img' />
           </div>
         </div>
-        <div className='right-side'>
-          <img src={postImg} alt='contact' className='post-img' />
+        <div className='text-center'>
+          <button className='main-btn' type='submit'>
+            Send
+          </button>
         </div>
-      </div>
-      <div className='text-center'>
-        <button className='main-btn' type='submit'>
-          Send
-        </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

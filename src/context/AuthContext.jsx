@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 export const AuthContext = React.createContext({
   login: () => {},
@@ -8,9 +9,8 @@ export const AuthContext = React.createContext({
 });
 
 export const AuthProvider = ({ children }) => {
+  const navigate = useNavigate();
   const login = async (user, pass) => {
-    // window.location.replace('/admin');
-    console.log(user, pass);
     const url = 'https://portfoliorecovery.me/wp-json/jwt-auth/v1/token';
     try {
       const res = await fetch(url, {
@@ -28,16 +28,22 @@ export const AuthProvider = ({ children }) => {
       if (data.token) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user_name', data.user_display_name);
-
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'login successful',
+          showConfirmButton: false,
+          timer: 1500,
+        });
         setTimeout(() => {
-          window.location.replace('/admin');
-        }, 1700);
+          navigate('/admin');
+        }, 2000);
       } else {
         Swal.fire({
           title: 'Error!',
           text: 'username or password is wrong!',
           icon: 'error',
-          confirmButtonText: 'Cool',
+          confirmButtonText: 'Ok!',
         });
       }
     } catch (err) {
@@ -45,7 +51,7 @@ export const AuthProvider = ({ children }) => {
         title: 'Error!',
         text: err.message,
         icon: 'error',
-        confirmButtonText: 'Cool',
+        confirmButtonText: 'ok!',
       });
     }
   };

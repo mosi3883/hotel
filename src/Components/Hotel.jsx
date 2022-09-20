@@ -33,14 +33,14 @@ const Hotel = ({ id }) => {
     return <ReactLoading className='loading' type='bars' />;
   }
   return (
-    <>
+    <div div className='container'>
       <div dangerouslySetInnerHTML={{ __html: html }}></div>;
       <div class='text-center '>
         <Link to={`/reserve-now?id=${id}`} class='main-btn'>
           Book now
         </Link>
       </div>
-    </>
+    </div>
   );
 
   // return (

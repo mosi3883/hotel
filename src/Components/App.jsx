@@ -12,8 +12,8 @@ import AddHotel from './admin/AddHotel';
 function App() {
   return (
     <div className='App'>
-      <AuthProvider>
-        <Router>
+      <Router>
+        <AuthProvider>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<LoginPage />} />
@@ -26,8 +26,8 @@ function App() {
               <Route path='new-hotel' element={<AddHotel />} />
             </Route>
           </Routes>
-        </Router>
-      </AuthProvider>
+        </AuthProvider>
+      </Router>
     </div>
   );
 }

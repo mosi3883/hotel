@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import './SearchForm.scss';
 export const searchHotels = async (text) => {
   if (text.trim() === '') {
     return [];

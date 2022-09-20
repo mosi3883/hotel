@@ -1,15 +1,14 @@
 import React from 'react';
 import Footer from '../Components/Footer';
-import Navbar from '../Components/Navbar';
+import Navbar from '../Components/Navbar/Navbar';
 import ReservationForm from '../Components/ReservationForm';
 
 const ReservationPage = () => {
   return (
     <>
-      <div className='container'>
-        <Navbar page='book-now' />
-        <ReservationForm />
-      </div>
+      <Navbar page='book-now' />
+      <ReservationForm />
+
       <Footer />
     </>
   );

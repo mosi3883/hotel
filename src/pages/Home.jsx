@@ -2,15 +2,13 @@ import React from 'react';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import DemoHotels from '../Components/DemoHotels';
-import Navbar from '../Components/Navbar';
-import bg from './large.jpg';
+import Navbar from '../Components/Navbar/Navbar';
+import bg from './fixedBg.jpg';
 const Home = () => {
   return (
     <>
-      <div className='container'>
-        <Navbar page='home' />
-        <Header />
-      </div>
+      <Navbar page='home' />
+      <Header />
       <div
         style={{
           backgroundImage: `url(${bg})`,
@@ -21,6 +19,7 @@ const Home = () => {
           backgroundAttachment: 'fixed',
         }}
       />
+
       <DemoHotels />
 
       <Footer />

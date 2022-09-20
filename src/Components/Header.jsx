@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-import Navbar from './Navbar';
+// import Navbar from './Navbar/Navbar';
 import heroImg from './hero.jpg';
 import { Link } from 'react-router-dom';
 const Header = () => {

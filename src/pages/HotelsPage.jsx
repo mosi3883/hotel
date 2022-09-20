@@ -1,14 +1,13 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
+import Navbar from '../Components/Navbar/Navbar';
 import Footer from '../Components/Footer';
 import Hotels from '../Components/Hotels';
 const HotelsPage = () => {
   return (
     <>
-      <div className='container'>
-        <Navbar page='hotels' />
-        <Hotels />
-      </div>
+      <Navbar page='hotels' />
+      <Hotels />
+
       <Footer />
     </>
   );

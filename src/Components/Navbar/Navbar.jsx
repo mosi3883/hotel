@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
-import logo from './logo2.png';
+import logo from './logo.png';
 import { FaSearch, FaAlignJustify } from 'react-icons/fa';
 import { useState } from 'react';
-import Modal from './Modal';
+import Modal from '../Modal';
 import MainNavList from './MainNavList';
 import SearchForm from './SearchForm';
 const Navbar = ({ page }) => {
@@ -23,16 +23,16 @@ const Navbar = ({ page }) => {
     setShowNavbar(true);
   };
 
-  // useEffect(() => {
-  //   return () => setShowSearchModal(false);
-  // });
+  const closeNavbar = () => {
+    setShowNavbar(false);
+  };
 
   return (
     <nav className='main-nav'>
       <img src={logo} alt='logo' className='logo' />
       <MainNavList page={page} />
       {showNavbar && (
-        <Modal closeModal={() => setShowNavbar(false)}>
+        <Modal closeModal={closeNavbar}>
           <MainNavList mobile={true} />
         </Modal>
       )}

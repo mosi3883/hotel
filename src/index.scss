@@ -41,7 +41,9 @@ h6 {
 .loading {
   margin: 50px auto;
   fill: var(--color-one) !important;
-  width: 150px;
+  width: 150px !important;
+  display: block;
+  height: 150px !important;
 }
 
 .container {
