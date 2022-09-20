@@ -6,6 +6,7 @@ import { FaSearch, FaAlignJustify } from 'react-icons/fa';
 import { useState } from 'react';
 import Modal from './Modal';
 import MainNavList from './MainNavList';
+import SearchForm from './SearchForm';
 const Navbar = ({ page }) => {
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
@@ -16,10 +17,6 @@ const Navbar = ({ page }) => {
 
   const closeSearchModal = () => {
     setShowSearchModal(false);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
   };
 
   const openNavbar = () => {
@@ -62,23 +59,7 @@ const Navbar = ({ page }) => {
 
       {showSearchModal && (
         <Modal closeModal={closeSearchModal}>
-          <form className='search-form' onSubmit={handleSearchSubmit}>
-            <div className='autocomplete'>
-              <input type='text' className='search-input' placeholder='Search ...' autoFocus />
-              <div className='autocomplete-items'>
-                <Link to='/hotel/25' className='autocomplete-link'>
-                  hotel 25
-                </Link>
-                <Link to='/hotel/32' className='autocomplete-link'>
-                  hotel 32
-                </Link>
-              </div>
-            </div>
-
-            <button type='submit' className='search-submit-btn'>
-              Search
-            </button>
-          </form>
+          <SearchForm />
         </Modal>
       )}
     </nav>

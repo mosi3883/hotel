@@ -37,7 +37,7 @@ const AddHotel = () => {
           <div class='hotel-intro-box'>
             <h4 class='heading-4'>${name}</h4>
             <p class='hotel-price-box'>
-              <b>price: </b> <span class="price-value">${price}</span>€
+              <b>price(per night): </b> <span class="price-value">${price}</span> NOK
             </p>
             <p class='hotel-location-box'>
               <b>Location: </b> <span class="location-value">${location}</span>

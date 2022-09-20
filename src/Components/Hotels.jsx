@@ -16,7 +16,6 @@ const Hotels = () => {
       );
       const data = await res.json();
       setHotels(data);
-      setLoading(false);
     } catch (err) {
       console.log(err);
     } finally {
@@ -62,7 +61,7 @@ const Hotels = () => {
               </div>
               <div className={styles['hotel-price']}>
                 <FaMoneyCheckAlt className={styles['price-icon']} />
-                <p className={styles['hotel-info']}>{price}€</p>
+                <p className={styles['hotel-info']}>{price} NOK</p>
               </div>
             </div>
           );

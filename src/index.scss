@@ -40,6 +40,8 @@ h6 {
 
 .loading {
   margin: 50px auto;
+  fill: var(--color-one) !important;
+  width: 150px;
 }
 
 .container {
@@ -78,7 +80,7 @@ h6 {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   position: relative;
 }
 

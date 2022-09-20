@@ -7,15 +7,16 @@
 
 .hotel {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 45px;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 25px;
   background-color: #f6f6f6;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.17);
   cursor: pointer;
+  padding-bottom: 40px;
 }
 
 .hotel-info {
-  font-size: 20px;
+  font-size: 13px;
 }
 
 .hotel-img {
@@ -43,17 +44,23 @@
   transform: translateY(50%);
 }
 
+.hotel-location {
+  margin-top: 20px;
+}
+
 .hotel-location,
 .hotel-price {
   font-size: 15px;
   margin-left: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 50px;
+  gap: 16px;
+  margin-bottom: 0;
 }
 
 .location-icon,
 .price-icon {
   color: var(--color-three);
+  width: 24px;
+  height: 24px;
 }
