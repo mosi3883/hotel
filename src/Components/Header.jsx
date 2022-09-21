@@ -16,9 +16,9 @@ const Header = () => {
               Hotels can be awarded 'Stars' if their facilities match.
             </p>
             <div>
-              <Link to='/reserve-now' className='main-btn'>
+              {/* <Link to='/reserve-now' className='main-btn'>
                 Book now
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className='hero-img-box'>
