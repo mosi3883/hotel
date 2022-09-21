@@ -9,11 +9,12 @@ import Swal from 'sweetalert2';
 const Login = () => {
   const navigate = useNavigate();
   const authCtx = useContext(AuthContext);
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   if (authCtx.isLoggedIn()) {
     navigate('/admin');
   }
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   const loginHandler = (e) => {
     e.preventDefault();
     // validation
@@ -67,7 +68,7 @@ const Login = () => {
       <div className='form-group'>
         <FaLock className='input-icon' />
         <input
-          type='text'
+          type='password'
           id='password'
           className='login-input'
           placeholder='password'

@@ -9,6 +9,7 @@ import { AuthProvider } from '../context/AuthContext';
 import AdminPage from '../pages/AdminPage';
 import ReservationList from './admin/ReservationList';
 import AddHotel from './admin/AddHotel';
+import Messages from './admin/Messages';
 function App() {
   return (
     <div className='App'>
@@ -24,6 +25,7 @@ function App() {
             <Route path='/admin' element={<AdminPage />}>
               <Route index element={<ReservationList />} />
               <Route path='new-hotel' element={<AddHotel />} />
+              <Route path='messages' element={<Messages />} />
             </Route>
           </Routes>
         </AuthProvider>

@@ -162,7 +162,7 @@ const AddHotel = () => {
     setImages(e.target);
   };
   return (
-    <div>
+    <div className='container'>
       <h3 className='heading-tertiary'>Add new Hotel</h3>
       <form className='addHotel-form' onSubmit={handleSubmit}>
         <div className='form-group'>

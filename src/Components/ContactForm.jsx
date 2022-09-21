@@ -47,6 +47,10 @@ const ContactForm = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      setFname('');
+      setLname('');
+      setEmail('');
+      setMessage('');
     }
   };
   return (

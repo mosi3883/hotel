@@ -18,10 +18,10 @@ const AdminPage = () => {
   return (
     <>
       {authCtx.isLoggedIn() && (
-        <div className='container'>
+        <>
           <AdminNavbar />
           <Outlet />
-        </div>
+        </>
       )}
     </>
   );
