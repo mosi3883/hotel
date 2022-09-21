@@ -39,7 +39,7 @@ const ReservationList = () => {
               {reserveList.map((item, i) => {
                 return (
                   <tr>
-                    <td className='td'>#{i + 1}</td>
+                    <td className='td bold'>#{i + 1}</td>
                     <td className='td'>{item.fname}</td>
                     <td className='td'>{item.lname}</td>
                     <td className='td'>{item.email}</td>

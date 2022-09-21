@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import './Messages.scss';
+// import './Messages.scss';
 const Messages = () => {
   const [messages, setMessages] = useState([]);
 
@@ -38,7 +38,7 @@ const Messages = () => {
             {messages.map((message, i) => {
               return (
                 <tr>
-                  <td className='td'>#{i + 1}</td>
+                  <td className='td bold'>#{i + 1}</td>
                   <td className='td'>{message.fname}</td>
                   <td className='td'>{message.lname}</td>
                   <td className='td'>{message.email}</td>
