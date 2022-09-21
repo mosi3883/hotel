@@ -3,7 +3,9 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../context/AuthContext';
+import Modal from '../Modal';
 import './AddHotel.scss';
+import ReactLoading from 'react-loading';
 const AddHotel = () => {
   // function escapeHtml(text) {
   //   var map = {
@@ -26,6 +28,7 @@ const AddHotel = () => {
   const [location, setLocation] = useState('');
   const [thumb, setThumb] = useState('');
   const [images, setImages] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const renderHtml = (name, price, location, img0, img1, img2, img3) => {
     return `<div class='home'>
@@ -90,6 +93,7 @@ const AddHotel = () => {
       timer: 9000,
       showConfirmButton: false,
     });
+    setLoading(true);
     const data0 = await uploadImage(file);
     let data1, data2, data3;
     if (images) {
@@ -140,6 +144,8 @@ const AddHotel = () => {
       }
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   };
   const nameChangeHandler = (e) => {
@@ -161,8 +167,14 @@ const AddHotel = () => {
   const imagesChangehandler = (e) => {
     setImages(e.target);
   };
+
   return (
     <div className='container'>
+      {loading && (
+        <Modal>
+          <ReactLoading type='bars' className='loading loading--white' />
+        </Modal>
+      )}
       <h3 className='heading-tertiary'>Add new Hotel</h3>
       <form className='addHotel-form' onSubmit={handleSubmit}>
         <div className='form-group'>
