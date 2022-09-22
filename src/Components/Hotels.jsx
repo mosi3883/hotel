@@ -5,15 +5,21 @@ import { FaMapMarkerAlt, FaMoneyCheckAlt } from 'react-icons/fa';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactLoading from 'react-loading';
+import { useSearchParams } from 'react-router-dom';
 const Hotels = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query');
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(true);
-  const fetchHotels = async () => {
+  const fetchHotels = async (query) => {
     try {
-      const res = await fetch(
-        'https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99&categories=1'
-      );
+      let api =
+        'https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99&categories=1';
+      if (query) {
+        api = `https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99&categories=1&search=${query}`;
+      }
+      const res = await fetch(api);
       const data = await res.json();
       setHotels(data);
     } catch (err) {
@@ -22,9 +28,14 @@ const Hotels = () => {
       setLoading(false);
     }
   };
+
   useEffect(() => {
-    fetchHotels();
-  }, []);
+    if (query) {
+      fetchHotels(query);
+    } else {
+      fetchHotels();
+    }
+  }, [query]);
 
   return (
     <div className='container'>

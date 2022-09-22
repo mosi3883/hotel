@@ -23,7 +23,7 @@ const SearchForm = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
 
-    navigate(`/hotels?q=${searchText}`);
+    navigate(`/hotels?query=${searchText}`);
   };
   const searchChangeHandler = (e) => {
     setSearchText(e.target.value);
@@ -64,7 +64,7 @@ const SearchForm = () => {
 
         <div className='autocomplete-items'>
           {complation.map((com) => (
-            <Link to={com.href} className='autocomplete-link'>
+            <Link key={com.href} to={com.href} className='autocomplete-link'>
               {com.name}
             </Link>
           ))}

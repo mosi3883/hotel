@@ -2,11 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import './ReservationForm.scss';
-//import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
 const ReservationForm = () => {
-  //const [searchParams, setSearchParams] = useSearchParams();
-  //console.log(searchParams('id'));
-  const [hotelId, setHotelId] = useState(99);
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
+  const [hotelId, setHotelId] = useState(0);
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
@@ -14,6 +15,10 @@ const ReservationForm = () => {
   const [guest, setGuest] = useState(0);
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
+
+  useEffect(() => {
+    setHotelId(id);
+  }, [id]);
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
@@ -57,6 +62,7 @@ const ReservationForm = () => {
         setGuest('');
         setCheckIn('');
         setCheckOut('');
+        setHotelId(0);
       } else {
         Swal.fire({
           position: 'top-end',
