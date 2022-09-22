@@ -4,7 +4,11 @@ import Header from '../Components/Header';
 import DemoHotels from '../Components/DemoHotels';
 import Navbar from '../Components/Navbar/Navbar';
 import bg from './fixedBg.jpg';
+import { useEffect } from 'react';
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Home';
+  }, []);
   return (
     <>
       <Navbar page='home' />

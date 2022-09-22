@@ -18,6 +18,10 @@ const Messages = () => {
     };
     getMessages();
   }, []);
+
+  useEffect(() => {
+    document.title = 'Admin - Messages';
+  }, []);
   return (
     <div className='container'>
       <div className='messages'>

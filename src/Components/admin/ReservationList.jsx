@@ -19,6 +19,9 @@ const ReservationList = () => {
     getList();
   }, []);
 
+  useEffect(() => {
+    document.title = 'Admin - Reservation list';
+  }, []);
   return (
     <div className='container'>
       <div className='reservation'>

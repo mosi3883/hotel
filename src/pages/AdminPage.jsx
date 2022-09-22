@@ -15,6 +15,10 @@ const AdminPage = () => {
       return;
     }
   }, [navigate, authCtx]);
+
+  useEffect(() => {
+    document.title = 'Admin';
+  }, []);
   return (
     <>
       {authCtx.isLoggedIn() && (

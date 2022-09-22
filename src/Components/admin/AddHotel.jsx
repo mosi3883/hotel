@@ -6,7 +6,11 @@ import { AuthContext } from '../../context/AuthContext';
 import Modal from '../Modal';
 import './AddHotel.scss';
 import ReactLoading from 'react-loading';
+import { useEffect } from 'react';
 const AddHotel = () => {
+  useEffect(() => {
+    document.title = 'Admin - Add Hotel';
+  }, []);
   // function escapeHtml(text) {
   //   var map = {
   //     '&': '&amp;',
