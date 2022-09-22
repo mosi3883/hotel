@@ -14,10 +14,9 @@ const Hotels = () => {
   const [loading, setLoading] = useState(true);
   const fetchHotels = async (query) => {
     try {
-      let api =
-        'https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99&categories=1';
+      let api = 'https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99';
       if (query) {
-        api = `https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99&categories=1&search=${query}`;
+        api = `https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99&search=${query}`;
       }
       const res = await fetch(api);
       const data = await res.json();
