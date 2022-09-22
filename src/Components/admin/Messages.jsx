@@ -6,20 +6,17 @@ const Messages = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    setMessages([
-      {
-        fname: 'john',
-        lname: 'smith',
-        email: 'john@gmail.com',
-        text: ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil nisi mollitia reiciendis repudiandae eum? Tempora necessitatibus unde, optio blanditiis aut ipsum molestiae et. Minus assumenda quibusdam rerum ad numquam laborum.',
-      },
-      {
-        fname: 'leila',
-        lname: 'gorgc latino',
-        email: 'gorgc_latino75@gmail.com',
-        text: ' Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil nisi mollitia reiciendis repudiandae eum? Tempora necessitatibus unde, optio blanditiis aut ipsum molestiae et. Minus assumenda quibusdam rerum ad numquam laborum. dolor sit amet consectetur, adipisicing elit. Nihil nisi mollitia reiciendis ',
-      },
-    ]);
+    const getMessages = async () => {
+      try {
+        const apiUrl = 'https://portfoliorecovery.me/api/contact.php';
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        setMessages(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getMessages();
   }, []);
   return (
     <div className='container'>
@@ -39,10 +36,10 @@ const Messages = () => {
               return (
                 <tr>
                   <td className='td bold'>#{i + 1}</td>
-                  <td className='td'>{message.fname}</td>
-                  <td className='td'>{message.lname}</td>
+                  <td className='td'>{message.firstname}</td>
+                  <td className='td'>{message.lastname}</td>
                   <td className='td'>{message.email}</td>
-                  <td className='td message'>{message.text}</td>
+                  <td className='td message'>{message.message}</td>
                 </tr>
               );
             })}

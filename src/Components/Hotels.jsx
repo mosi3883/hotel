@@ -12,7 +12,7 @@ const Hotels = () => {
   const fetchHotels = async () => {
     try {
       const res = await fetch(
-        'https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99'
+        'https://portfoliorecovery.me/wp-json/wp/v2/posts?_embed&per_page=99&categories=1'
       );
       const data = await res.json();
       setHotels(data);

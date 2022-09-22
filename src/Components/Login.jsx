@@ -6,15 +6,19 @@ import { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { useEffect } from 'react';
 const Login = () => {
   const navigate = useNavigate();
   const authCtx = useContext(AuthContext);
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  if (authCtx.isLoggedIn()) {
-    navigate('/admin');
-  }
+
+  useEffect(() => {
+    if (authCtx.isLoggedIn()) {
+      navigate('/admin');
+    }
+  }, [authCtx, navigate]);
   const loginHandler = (e) => {
     e.preventDefault();
     // validation

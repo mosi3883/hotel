@@ -1,8 +1,7 @@
 import React from 'react';
 import './Header.scss';
-// import Navbar from './Navbar/Navbar';
 import heroImg from './hero.jpg';
-import { Link } from 'react-router-dom';
+
 const Header = () => {
   return (
     <header>
@@ -15,11 +14,7 @@ const Header = () => {
               'group', offer guests a standard that does not vary from one location to another.
               Hotels can be awarded 'Stars' if their facilities match.
             </p>
-            <div>
-              {/* <Link to='/reserve-now' className='main-btn'>
-                Book now
-              </Link> */}
-            </div>
+            <div></div>
           </div>
           <div className='hero-img-box'>
             <img src={heroImg} alt='hero' className='hero-img' />

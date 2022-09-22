@@ -2,7 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 import './ReservationForm.scss';
+//import { useSearchParams } from 'react-router-dom';
 const ReservationForm = () => {
+  //const [searchParams, setSearchParams] = useSearchParams();
+  //console.log(searchParams('id'));
+  const [hotelId, setHotelId] = useState(99);
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
@@ -11,40 +15,68 @@ const ReservationForm = () => {
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
 
-  const formSubmitHandler = (e) => {
+  const formSubmitHandler = async (e) => {
     e.preventDefault();
 
     // try to submit
 
-    if (true) {
-      Swal.fire({
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: false,
-        icon: 'success',
-        title: 'Reservation submited sucessfully',
-      });
+    const apiUrl = 'https://portfoliorecovery.me/api/reservation.php';
 
-      setFname('');
-      setLname('');
-      setEmail('');
-      setPhone('');
-      setGuest('');
-      setCheckIn('');
-      setCheckOut('');
-    } else {
-      Swal.fire({
-        title: 'Error!',
-        text: 'Something went wrong!',
-        icon: 'error',
-        confirmButtonText: 'ok!',
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          hotel_id: +hotelId,
+          firstname: fname,
+          lastname: lname,
+          email: email,
+          phone: phone,
+          number_of_guests: +guest,
+          checkin: checkIn,
+          checkout: checkOut,
+        }),
       });
+      const data = await response.json();
+      if (data.status) {
+        Swal.fire({
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: false,
+          icon: 'success',
+          title: 'Reservation submited sucessfully',
+        });
+
+        setFname('');
+        setLname('');
+        setEmail('');
+        setPhone('');
+        setGuest('');
+        setCheckIn('');
+        setCheckOut('');
+      } else {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Something went wrong!',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
   const fnameChangeHandler = (e) => {
     setFname(e.target.value);
+  };
+
+  const hotelIdChangeHandler = (e) => {
+    setHotelId(e.target.value);
   };
 
   const lnameChangeHandler = (e) => {
@@ -98,6 +130,19 @@ const ReservationForm = () => {
               className='reserve-input'
               onChange={lnameChangeHandler}
               value={lname}
+              required
+            />
+          </div>
+          <div className='form-group'>
+            <label htmlFor='hotel' className='reserve-label'>
+              hotel id
+            </label>
+            <input
+              type='number'
+              id='hotel'
+              className='reserve-input'
+              onChange={hotelIdChangeHandler}
+              value={hotelId}
               required
             />
           </div>

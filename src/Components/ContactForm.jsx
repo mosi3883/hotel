@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import mailImg from './mailbox.png';
 import './ContactForm.scss';
 import Swal from 'sweetalert2';
+import AuthContext from '../context/AuthContext';
 const ContactForm = () => {
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
+  const authCtx = useContext(AuthContext);
   const fnameChangeHandler = (e) => {
     setFname(e.target.value);
   };
@@ -21,7 +22,7 @@ const ContactForm = () => {
   const messageChangeHanlder = (e) => {
     setMessage(e.target.value);
   };
-  const contactSubmitHandler = (e) => {
+  const contactSubmitHandler = async (e) => {
     e.preventDefault();
     // validation
     if (
@@ -39,18 +40,47 @@ const ContactForm = () => {
       return;
     }
     // send contact data to api
-    if (true) {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Form submited',
-        showConfirmButton: false,
-        timer: 1500,
+    const apiUrl = 'https://portfoliorecovery.me/api/contact.php';
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstname: fname,
+          lastname: lname,
+          email: email,
+          message: message,
+        }),
       });
-      setFname('');
-      setLname('');
-      setEmail('');
-      setMessage('');
+      const data = await response.json();
+      if (data.status) {
+        if (true) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Form submited',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setFname('');
+          setLname('');
+          setEmail('');
+          setMessage('');
+        }
+      } else {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Something went wrong!',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
   return (
@@ -101,9 +131,8 @@ const ContactForm = () => {
                 id='message'
                 className='contact-textarea'
                 onChange={messageChangeHanlder}
-              >
-                {message}
-              </textarea>
+                value={message}
+              ></textarea>
             </div>
           </div>
           <div className='right-side'>
